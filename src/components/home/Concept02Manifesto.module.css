@@ -1,0 +1,147 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  padding: 96px 24px 110px;
+}
+
+.folio {
+  position: absolute;
+  top: 24px;
+  left: 8px;
+  font-family: var(--font-instrument-serif), serif;
+  font-size: clamp(140px, 42vw, 220px);
+  font-weight: 400;
+  line-height: 0.75;
+  letter-spacing: -0.06em;
+  color: var(--color-ink);
+  opacity: 0.08;
+  pointer-events: none;
+  user-select: none;
+}
+
+.spread {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.kicker {
+  margin: 0 0 22px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-instrument-serif), serif;
+  font-size: clamp(40px, 11vw, 52px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.line {
+  display: block;
+}
+
+.body {
+  margin: 0;
+  max-width: 38ch;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-ink-muted);
+}
+
+.link {
+  margin-top: 28px;
+}
+
+.kicker,
+.title,
+.body,
+.link {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+}
+
+.visible .kicker,
+.visible .title,
+.visible .body,
+.visible .link {
+  opacity: 1;
+  transform: none;
+}
+
+.visible .title {
+  transition-delay: 80ms;
+}
+
+.visible .body {
+  transition-delay: 160ms;
+}
+
+.visible .link {
+  transition-delay: 240ms;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 160px var(--page-pad-x) 180px;
+  }
+
+  .folio {
+    top: 48px;
+    left: var(--page-pad-x);
+    font-size: clamp(180px, 22vw, 280px);
+  }
+
+  .spread {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+    align-items: end;
+  }
+
+  .left {
+    grid-column: 1 / 8;
+  }
+
+  .right {
+    grid-column: 8 / 13;
+    padding-bottom: 8px;
+  }
+
+  .title {
+    font-size: clamp(52px, 5.4vw, 78px);
+    line-height: 1.05;
+  }
+
+  .body {
+    font-size: 16.5px;
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kicker,
+  .title,
+  .body,
+  .link {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,131 @@
+.hero {
+  --photo-position: 78% 46%;
+  --photo-position-mobile: 70% 48%;
+
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--color-hero);
+  color: var(--color-hero-fg);
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  animation: settle 4.8s var(--ease-out) both;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    70% 70% at 16% 40%,
+    rgb(33 27 23 / 0.72) 0%,
+    rgb(33 27 23 / 0.28) 42%,
+    transparent 68%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100svh;
+  max-width: 580px;
+  padding: 120px 24px 48px;
+}
+
+.label {
+  margin: 0 0 18px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(52px, 12vw, 72px);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+
+.line {
+  display: block;
+}
+
+.intro {
+  margin: 22px 0 0;
+  max-width: 34ch;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-hero-muted);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.quiet {
+  opacity: 0.62;
+  font-size: 10px;
+}
+
+@keyframes settle {
+  from {
+    transform: scale(1.02);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 100svh;
+  }
+
+  .content {
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 32vh 0 0 8vw;
+  }
+
+  .title {
+    font-size: clamp(64px, 6.4vw, 92px);
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+
+  .actions {
+    margin-top: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo {
+    animation: none;
+  }
+}

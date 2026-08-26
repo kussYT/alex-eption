@@ -1,0 +1,67 @@
+.switcher {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: flex;
+  gap: 8px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    transform 250ms var(--ease-out),
+    box-shadow 250ms var(--ease-out);
+}
+
+.concept01 {
+  background: #11110f;
+  color: #faf8f3;
+}
+
+.concept02 {
+  background: #8fa48f;
+  color: #f6f4ef;
+}
+
+.concept03 {
+  background: #b46a4a;
+  color: #fff6ef;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.button:focus-visible {
+  outline: 1px solid #faf8f3;
+  outline-offset: 3px;
+}
+
+.active {
+  box-shadow: 0 0 0 2px #faf8f3, 0 0 0 3px rgba(17, 17, 15, 0.55);
+}
+
+@media (max-width: 767px) {
+  .switcher {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .button {
+    width: 38px;
+    height: 38px;
+  }
+}
