@@ -1,0 +1,47 @@
+.layout {
+  display: grid;
+  gap: 32px;
+}
+
+.media {
+  min-height: 240px;
+  aspect-ratio: 5 / 4;
+}
+
+.features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.features li {
+  padding: 14px 0;
+  border-top: 1px solid rgb(243 240 233 / 0.14);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.features li:last-child {
+  border-bottom: 1px solid rgb(243 240 233 / 0.14);
+}
+
+.note {
+  margin: 24px 0 20px;
+  max-width: 36ch;
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 8%;
+    align-items: center;
+  }
+
+  .media {
+    min-height: 420px;
+    aspect-ratio: auto;
+  }
+}

@@ -1,0 +1,135 @@
+.section {
+  background: #0c0c0b;
+  color: var(--color-ivory);
+  padding: 72px 0 48px;
+}
+
+.inner {
+  display: grid;
+  gap: 48px;
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--page-pad-x);
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(32px, 6vw, 44px);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.address {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-muted);
+}
+
+.phone {
+  display: block;
+  width: fit-content;
+  margin: 16px 0 0;
+  padding: 8px 0;
+  color: inherit;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(26px, 6vw, 36px);
+  text-decoration: underline;
+  text-decoration-color: rgb(183 154 98 / 0.55);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.phone:hover,
+.phone:focus-visible {
+  color: var(--color-ivory);
+  text-decoration-color: var(--color-gold);
+}
+
+.phone:focus-visible {
+  outline: 1px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+.directions {
+  display: inline-flex;
+  margin-top: 16px;
+  min-height: 44px;
+}
+
+.hoursTitle {
+  margin: 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.hours {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hours li {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-line);
+  font-size: 15px;
+}
+
+.hours li span:last-child {
+  color: var(--color-muted);
+  text-align: right;
+}
+
+.note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: rgb(243 240 233 / 0.42);
+}
+
+.news {
+  width: 100%;
+  max-width: var(--page-max);
+  margin: 56px auto 0;
+  padding: 28px var(--page-pad-x) 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.newsTitle {
+  margin: 0 0 16px;
+  max-width: 28ch;
+  font-family: var(--font-serif), serif;
+  font-size: 22px;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 96px 0 64px;
+  }
+
+  .inner {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 10%;
+  }
+
+  .news {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 32px;
+    align-items: end;
+  }
+
+  .newsTitle {
+    margin: 0;
+  }
+}

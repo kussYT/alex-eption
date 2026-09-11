@@ -1,0 +1,119 @@
+:root {
+  --color-bg: #11110f;
+  --color-ivory: #f3f0e9;
+  --color-ivory-soft: #faf8f3;
+  --color-gold: #b79a62;
+  --color-gold-hover: #c7ad76;
+  --color-muted: #a9a49b;
+  --color-ink: #11110f;
+  --color-line: rgb(243 240 233 / 0.14);
+  --color-line-strong: rgb(243 240 233 / 0.28);
+  --color-glass: rgb(17 17 15 / 0.42);
+  --color-glass-strong: rgb(17 17 15 / 0.82);
+
+  --nav-height: 80px;
+  --nav-height-scrolled: 64px;
+  --page-pad-x: clamp(20px, 5.5vw, 88px);
+  --page-max: 1440px;
+  --section-space: clamp(72px, 11vw, 140px);
+
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration: 400ms;
+  --duration-fast: 250ms;
+
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-instrument-serif);
+
+  --text-display: clamp(44px, 11vw, 92px);
+  --text-h1: clamp(36px, 7vw, 64px);
+  --text-h2: clamp(28px, 4.6vw, 44px);
+  --text-h3: clamp(20px, 2.4vw, 28px);
+  --text-body: 16px;
+  --text-small: 13px;
+  --text-label: 11px;
+
+  --photo-position: 76% 60%;
+  --photo-position-mobile: 62% 72%;
+  --hero-blend-mask: linear-gradient(
+    90deg,
+    #000 0%,
+    #000 38%,
+    rgb(0 0 0 / 0.55) 48%,
+    transparent 60%
+  );
+  --hero-blend-mask-mobile: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 28%,
+    rgb(0 0 0 / 0.35) 52%,
+    #000 76%,
+    #000 100%
+  );
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-height: 88px;
+    --nav-height-scrolled: 60px;
+    --page-pad-x: clamp(32px, 5.5vw, 88px);
+  }
+}
+
+.t-display {
+  font-family: var(--font-serif), serif;
+  font-size: var(--text-display);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+
+.t-h1 {
+  font-family: var(--font-serif), serif;
+  font-size: var(--text-h1);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.t-h2 {
+  font-family: var(--font-serif), serif;
+  font-size: var(--text-h2);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.t-h3 {
+  font-family: var(--font-serif), serif;
+  font-size: var(--text-h3);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.t-body {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.t-small {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--text-small);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.t-label {
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}

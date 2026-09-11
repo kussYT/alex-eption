@@ -1,16 +1,24 @@
-import { ConceptStage } from "@/components/home/ConceptStage";
-import { Navbar } from "@/components/layout/Navbar";
-import { StyleSwitcher } from "@/components/theme/StyleSwitcher";
+import { Distinction } from "@/components/home/Distinction";
+import { EventPreview } from "@/components/home/EventPreview";
+import { Hero } from "@/components/home/Hero";
+import { MenuPreview } from "@/components/home/MenuPreview";
+import { PracticalInfo } from "@/components/home/PracticalInfo";
+import { ProductShowcase } from "@/components/home/ProductShowcase";
+import { SeminarPreview } from "@/components/home/SeminarPreview";
+import { createMetadata } from "@/lib/seo";
+
+export const metadata = createMetadata();
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main id="contenu">
-        <ConceptStage />
-        <div id="cuisine" className="scroll-probe" aria-hidden="true" />
-      </main>
-      <StyleSwitcher />
+      <Hero />
+      <MenuPreview />
+      <EventPreview />
+      <ProductShowcase />
+      <Distinction />
+      <SeminarPreview />
+      <PracticalInfo />
     </>
   );
 }

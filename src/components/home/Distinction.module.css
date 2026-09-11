@@ -1,0 +1,79 @@
+.section {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  overflow-x: clip;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding: 72px var(--page-pad-x) 76px;
+  text-align: center;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.year {
+  margin: 10px 0 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: rgb(17 17 15 / 0.48);
+}
+
+.score {
+  margin: 28px 0 0;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(64px, 18vw, 112px);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+
+.distinction {
+  margin: 18px 0 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.cuisine {
+  max-width: 28ch;
+  margin: 28px 0 0;
+  font-family: var(--font-serif), serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.45;
+  color: rgb(17 17 15 / 0.58);
+}
+
+.link {
+  margin-top: 28px;
+  min-height: 44px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding: 96px var(--page-pad-x) 100px;
+  }
+
+  .score {
+    margin-top: 36px;
+  }
+
+  .cuisine {
+    font-size: 20px;
+  }
+}

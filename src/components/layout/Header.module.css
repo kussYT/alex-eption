@@ -1,0 +1,246 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--nav-height);
+  padding: 0 var(--page-pad-x);
+  background: rgb(10 10 9 / 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  color: var(--color-ivory);
+  transition:
+    height 500ms var(--ease-out),
+    background-color 500ms var(--ease-out),
+    border-color 500ms var(--ease-out),
+    backdrop-filter 500ms var(--ease-out),
+    -webkit-backdrop-filter 500ms var(--ease-out);
+}
+
+.skip {
+  position: absolute;
+  left: var(--page-pad-x);
+  top: 12px;
+  z-index: 50;
+  padding: 8px 12px;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: translateY(-160%);
+}
+
+.skip:focus {
+  transform: translateY(0);
+  outline: 1px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo:focus-visible {
+  outline: 1px solid var(--color-gold);
+  outline-offset: 6px;
+}
+
+.wordmark {
+  font-family: var(--font-serif), serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  transition: font-size var(--duration) var(--ease-out);
+}
+
+.place {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(243 240 233 / 0.62);
+  transition: opacity var(--duration) var(--ease-out);
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 36px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  position: relative;
+  padding: 8px 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(243 240 233 / 0.86);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0;
+  height: 1px;
+  background: var(--color-ivory);
+  transition: width var(--duration-fast) var(--ease-out);
+}
+
+.link:hover,
+.link:focus-visible,
+.active {
+  color: var(--color-ivory);
+}
+
+.link:hover::after,
+.link:focus-visible::after,
+.active::after {
+  width: 100%;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--color-gold);
+  outline-offset: 6px;
+}
+
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menuButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.menuButton:focus-visible {
+  outline: 1px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+.menuLine {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--color-ivory);
+  transition:
+    transform 350ms var(--ease-out),
+    opacity 350ms var(--ease-out);
+}
+
+.menuButton[aria-expanded="true"] .menuLine:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.menuButton[aria-expanded="true"] .menuLine:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.reserve {
+  min-height: 42px;
+}
+
+.scrolled {
+  height: var(--nav-height-scrolled);
+  background: rgb(10 10 9 / 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: rgb(255 255 255 / 0.1);
+}
+
+.scrolled .wordmark {
+  font-size: 20px;
+}
+
+.scrolled .place {
+  display: none;
+}
+
+.scrolled .reserve {
+  min-height: 36px;
+  min-width: 108px;
+  height: 36px;
+}
+
+.menuOpen {
+  background: var(--color-bg);
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+@media (min-width: 768px) {
+  .wordmark {
+    font-size: 26px;
+  }
+
+  .nav {
+    display: flex;
+  }
+
+  .mobileActions {
+    display: none;
+  }
+
+  .scrolled .wordmark {
+    font-size: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .wordmark,
+  .place {
+    transition: none;
+  }
+
+  .header,
+  .scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .scrolled {
+    background: rgb(10 10 9 / 0.92);
+  }
+}

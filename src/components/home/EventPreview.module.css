@@ -1,0 +1,137 @@
+.section {
+  background: var(--color-bg);
+  color: var(--color-ivory);
+}
+
+.featured {
+  display: grid;
+}
+
+.media {
+  min-height: 240px;
+  aspect-ratio: 16 / 10;
+}
+
+.copy {
+  padding: 36px var(--page-pad-x) 40px;
+}
+
+.kicker {
+  margin: 0 0 16px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: var(--text-label);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.when {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 12px;
+}
+
+.day {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(56px, 16vw, 88px);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+}
+
+.month {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.title {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(28px, 7vw, 40px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.desc {
+  max-width: 38ch;
+  margin: 16px 0 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.meta {
+  margin: 10px 0 0;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 13px;
+  color: rgb(243 240 233 / 0.72);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.link,
+.more {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.more {
+  color: var(--color-muted);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--color-gold);
+}
+
+.more:hover,
+.more:focus-visible {
+  color: var(--color-ivory);
+}
+
+.link:focus-visible,
+.more:focus-visible {
+  outline: 1px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+@media (min-width: 900px) {
+  .featured {
+    grid-template-columns: 1.15fr 0.85fr;
+    min-height: min(640px, 72svh);
+  }
+
+  .media {
+    min-height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 72px 8% 72px 56px;
+  }
+
+  .day {
+    font-size: 104px;
+  }
+}

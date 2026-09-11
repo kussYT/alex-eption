@@ -1,0 +1,74 @@
+/* Jetons de la maquette 01 au moment du RDV.
+   Extrait de src/styles/themes.css — ne pas importer dans l’app live. */
+
+:root,
+[data-concept="01"] {
+  --nav-height: 88px;
+  --color-ink: #11110f;
+  --color-ivory: #faf8f3;
+  --color-paper: #f3f0e9;
+  --color-gold: #b58a4a;
+  --color-earth: #9a725a;
+  --color-hero: #11110f;
+  --color-hero-fg: #faf8f3;
+  --color-hero-muted: rgba(250, 248, 243, 0.68);
+  --color-hero-faint: rgba(250, 248, 243, 0.45);
+  --color-hero-line: rgba(250, 248, 243, 0.35);
+  --color-cta: #b58a4a;
+  --color-cta-fg: #11110f;
+  --color-cta-hover: #c49a5c;
+  --color-cta-hover-fg: #11110f;
+  --color-ink-soft: rgba(17, 17, 15, 0.55);
+  --color-ink-muted: rgba(17, 17, 15, 0.68);
+  --color-ink-faint: rgba(17, 17, 15, 0.4);
+  --nav-fg: #faf8f3;
+  --nav-link: #faf8f3;
+  --nav-hover: #faf8f3;
+  --nav-place: #b58a4a;
+  --nav-surface: linear-gradient(
+    to bottom,
+    rgb(10 10 9 / 0.45),
+    rgb(10 10 9 / 0)
+  );
+  --nav-blur: blur(8px);
+  --nav-outline-bg: #b58a4a;
+  --nav-outline-border: #b58a4a;
+  --nav-outline-color: #11110f;
+  --nav-outline-hover-bg: #c49a5c;
+  --nav-outline-hover-border: #c49a5c;
+  --nav-outline-hover-color: #11110f;
+  --nav-menu-line: #faf8f3;
+  --nav-scrolled-bg: rgba(243, 240, 233, 0.94);
+  --nav-scrolled-fg: #11110f;
+  --nav-scrolled-link: rgba(17, 17, 15, 0.72);
+  --nav-scrolled-border: rgba(17, 17, 15, 0.08);
+  --nav-scrolled-outline-bg: #b58a4a;
+  --nav-scrolled-outline-border: #b58a4a;
+  --nav-scrolled-outline-color: #11110f;
+  --nav-scrolled-outline-hover-bg: #c49a5c;
+  --nav-scrolled-outline-hover-border: #c49a5c;
+  --nav-scrolled-outline-hover-color: #11110f;
+  --overlay-bg: #11110f;
+  --overlay-fg: #faf8f3;
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-instrument-serif);
+  --photo-position: 76% 60%;
+  --photo-position-mobile: 62% 72%;
+  --hero-blend-mask: linear-gradient(
+    90deg,
+    #000 0%,
+    #000 40%,
+    rgb(0 0 0 / 0.55) 48%,
+    transparent 58%
+  );
+  --hero-blend-mask-mobile: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 32%,
+    rgb(0 0 0 / 0.35) 54%,
+    #000 74%,
+    #000 100%
+  );
+  --hero-nav-veil: none;
+  --hero-nav-veil-height: 0px;
+}
